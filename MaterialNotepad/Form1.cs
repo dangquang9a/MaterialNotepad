@@ -22,6 +22,19 @@ namespace MaterialNotepad
             this.bSave.MouseHover += Save_Mouseover;
             this.bSaveas.MouseHover += Saveas_Mouseover;
             this.bSaveall.MouseHover += Saveall_Mouseover;
+
+            bMenu.MouseEnter += OnMouseEnter;
+            bMenu.MouseLeave += OnMouseLeave;
+            bNew.MouseEnter += OnMouseEnter;
+            bNew.MouseLeave += OnMouseLeave;
+            bOpen.MouseEnter += OnMouseEnter;
+            bOpen.MouseLeave += OnMouseLeave;
+            bSave.MouseEnter += OnMouseEnter;
+            bSave.MouseLeave += OnMouseLeave;
+            bSaveas.MouseEnter += OnMouseEnter;
+            bSaveas.MouseLeave += OnMouseLeave;
+            bSaveall.MouseEnter += OnMouseEnter;
+            bSaveall.MouseLeave += OnMouseLeave;
         }
 
         private void materialContextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -75,6 +88,15 @@ namespace MaterialNotepad
         private void Saveall_Mouseover(object sender, EventArgs e)
         {
             ttSaveall.Show("Save all opening file", bSaveall);
+        }
+
+        private void OnMouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = SystemColors.ButtonHighlight;
+        }
+        private void OnMouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = SystemColors.ButtonFace;
         }
 
         private void materialTabSelector1_Click(object sender, EventArgs e)
